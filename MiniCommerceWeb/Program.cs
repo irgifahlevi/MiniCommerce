@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using MiniCommerceWeb.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var conString = builder.Configuration.GetConnectionString("DB");
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conString));
 
 var app = builder.Build();
 
