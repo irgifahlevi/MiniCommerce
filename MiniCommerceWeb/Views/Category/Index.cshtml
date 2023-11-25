@@ -1,6 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Category List";
 }
+@model List<Category>
 
-
-<h1 class="display-4">Category List</h1>
+<h3 class="display-4">Category List</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th>Display Order</th>
+            <th>Created By</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var data in Model)
+        {
+            <tr>
+                <td>@data.ID</td>
+                <td>@data.Name</td>
+                <td>@data.DisplayOrder</td>
+                <td>@data.CreatedBy</td>
+                <td>@data.CreatedAt</td>
+                <td>@data.UpdatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>
