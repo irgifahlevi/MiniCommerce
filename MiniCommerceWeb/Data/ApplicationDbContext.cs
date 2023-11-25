@@ -12,5 +12,20 @@ namespace MiniCommerceWeb.Data
         }
 
         public DbSet<Category> Categories { get; set; }
+
+        // Just for send migration data
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //   modelBuilder.Entity<Category>().HasData(
+        //       new Category { 
+        //           ID = 0, 
+        //           Name = "NULL",
+        //           DisplayOrder = 0, 
+        //           CreatedBy = "MIGRATION", 
+        //           CreatedAt = "NULL", 
+        //           UpdatedAt = "NULL", 
+        //           RowStatus = -1 
+        //       });
+        //}
     }
 }
